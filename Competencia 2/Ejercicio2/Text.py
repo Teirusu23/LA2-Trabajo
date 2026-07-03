@@ -3,10 +3,15 @@ from antlr4 import *
 from ExprLexer import ExprLexer
 import sys
 
-input_stream = FileStream(sys.argv[1])
+if len(sys.argv) > 1:
+    input_stream = FileStream(sys.argv[1])
+else:
+    lexer_terminal = input("? ")
+    input_stream = InputStream(lexer_terminal)
+
 
 lexer = ExprLexer(input_stream)
-#lexer = ExprLexer(InputStream(input("? ")))
+
 
 tokens = CommonTokenStream(lexer)
 tokens.fill()

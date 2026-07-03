@@ -2,11 +2,10 @@ grammar Expr;
 
 root : expr EOF;
 
-expr : expr MENOS expr | NUM;
-IF: 'if';
-MAYOR_QUE : '>';
+expr : EOF;
 NUM : [0-9]+;
-IDENTIFICADOR:[a-zA-Z]+; 
 MENOS : '-';
+IDENTIFICADOR:[a-zA-Z]+; 
+
 
 WS : [ \t\r\n]+ -> skip;
