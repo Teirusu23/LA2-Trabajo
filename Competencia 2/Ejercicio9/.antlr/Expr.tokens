@@ -1,0 +1,11 @@
+IF=1
+ParentA=2
+COMP=3
+ParentC=4
+NUM=5
+Identificador=6
+WS=7
+'if'=1
+'('=2
+'>'=3
+')'=4

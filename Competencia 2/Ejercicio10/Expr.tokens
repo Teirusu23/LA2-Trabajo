@@ -1,0 +1,11 @@
+PRINT=1
+ParentA=2
+ParentC=3
+PuntoComa=4
+String=5
+Identificador=6
+WS=7
+'print'=1
+'('=2
+')'=3
+';'=4
