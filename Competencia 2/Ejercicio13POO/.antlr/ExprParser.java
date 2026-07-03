@@ -16,9 +16,10 @@ public class ExprParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		PUBLIC=1, CLASS=2, LlaveA=3, STATIC=4, VOID=5, ParentA=6, STRING=7, CorchA=8, 
-		CorchC=9, ParentC=10, INT=11, Igual=12, PuntoComa=13, IF=14, CompIg=15, 
-		LlaveC=16, Punto=17, Suma=18, CADENA=19, NUM=20, IDENTIFICADOR=21, WS=22;
+		CREATE=1, TABLE=2, PRIMARY=3, NOT=4, NULL=5, INSERT=6, INTO=7, SELECT=8, 
+		FROM=9, INNER=10, JOIN=11, ON=12, WHERE=13, ParentA=14, ParentC=15, Coma=16, 
+		PuntoComa=17, Igual=18, Punto=19, Cadena=20, NUM=21, Identificador=22, 
+		WS=23;
 	public static final int
 		RULE_root = 0, RULE_expr = 1;
 	private static String[] makeRuleNames() {
@@ -30,17 +31,18 @@ public class ExprParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'public'", "'class'", "'{'", "'static'", "'void'", "'('", "'String'", 
-			"'['", "']'", "')'", "'int'", "'='", "';'", "'if'", "'>='", "'}'", "'.'", 
-			"'+'"
+			null, "'CREATE'", "'TABLE'", "'primary'", "'NOT'", "'NULL'", "'INSERT'", 
+			"'INTO'", "'SELECT'", "'FROM'", "'INNER'", "'JOIN'", "'ON'", "'WHERE'", 
+			"'('", "')'", "','", "';'", "'='", "'.'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "PUBLIC", "CLASS", "LlaveA", "STATIC", "VOID", "ParentA", "STRING", 
-			"CorchA", "CorchC", "ParentC", "INT", "Igual", "PuntoComa", "IF", "CompIg", 
-			"LlaveC", "Punto", "Suma", "CADENA", "NUM", "IDENTIFICADOR", "WS"
+			null, "CREATE", "TABLE", "PRIMARY", "NOT", "NULL", "INSERT", "INTO", 
+			"SELECT", "FROM", "INNER", "JOIN", "ON", "WHERE", "ParentA", "ParentC", 
+			"Coma", "PuntoComa", "Igual", "Punto", "Cadena", "NUM", "Identificador", 
+			"WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -132,7 +134,7 @@ public class ExprParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprContext extends ParserRuleContext {
 		public TerminalNode NUM() { return getToken(ExprParser.NUM, 0); }
-		public TerminalNode IDENTIFICADOR() { return getToken(ExprParser.IDENTIFICADOR, 0); }
+		public TerminalNode Identificador() { return getToken(ExprParser.Identificador, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -148,7 +150,7 @@ public class ExprParser extends Parser {
 			{
 			setState(7);
 			_la = _input.LA(1);
-			if ( !(_la==NUM || _la==IDENTIFICADOR) ) {
+			if ( !(_la==NUM || _la==Identificador) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -170,9 +172,9 @@ public class ExprParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0016\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
+		"\u0004\u0001\u0017\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
 		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
-		"\u0000\u0002\u0000\u0002\u0000\u0001\u0001\u0000\u0014\u0015\u0007\u0000"+
+		"\u0000\u0002\u0000\u0002\u0000\u0001\u0001\u0000\u0015\u0016\u0007\u0000"+
 		"\u0004\u0001\u0000\u0000\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004"+
 		"\u0005\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006"+
 		"\u0001\u0001\u0000\u0000\u0000\u0007\b\u0007\u0000\u0000\u0000\b\u0003"+

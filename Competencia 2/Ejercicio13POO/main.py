@@ -18,7 +18,7 @@ class Main:
             return
 
         if not archivo.es_el_tipo_correcto():
-            print("El archivo debe ser .txt")
+            print("El archivo debe ser .sql")
             return
 
         codigo = archivo.leer()

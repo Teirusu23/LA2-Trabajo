@@ -16,10 +16,8 @@ public class ExprParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		CREATE=1, TABLE=2, PRIMARY=3, NOT=4, NULL=5, INSERT=6, INTO=7, SELECT=8, 
-		FROM=9, INNER=10, JOIN=11, ON=12, WHERE=13, ParentA=14, ParentC=15, Coma=16, 
-		PuntoComa=17, Igual=18, Punto=19, Cadena=20, NUM=21, Identificador=22, 
-		WS=23;
+		UPDATE=1, SET=2, WHERE=3, Coma=4, PuntoComa=5, Igual=6, Punto=7, Cadena=8, 
+		NUM=9, Identificador=10, WS=11;
 	public static final int
 		RULE_root = 0, RULE_expr = 1;
 	private static String[] makeRuleNames() {
@@ -31,18 +29,14 @@ public class ExprParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'CREATE'", "'TABLE'", "'primary'", "'NOT'", "'NULL'", "'INSERT'", 
-			"'INTO'", "'SELECT'", "'FROM'", "'INNER'", "'JOIN'", "'ON'", "'WHERE'", 
-			"'('", "')'", "','", "';'", "'='", "'.'"
+			null, "'UPDATE'", "'SET'", "'WHERE'", "','", "';'", "'='", "'.'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "CREATE", "TABLE", "PRIMARY", "NOT", "NULL", "INSERT", "INTO", 
-			"SELECT", "FROM", "INNER", "JOIN", "ON", "WHERE", "ParentA", "ParentC", 
-			"Coma", "PuntoComa", "Igual", "Punto", "Cadena", "NUM", "Identificador", 
-			"WS"
+			null, "UPDATE", "SET", "WHERE", "Coma", "PuntoComa", "Igual", "Punto", 
+			"Cadena", "NUM", "Identificador", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -172,13 +166,13 @@ public class ExprParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0017\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
+		"\u0004\u0001\u000b\n\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0001"+
 		"\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001\u0000"+
-		"\u0000\u0002\u0000\u0002\u0000\u0001\u0001\u0000\u0015\u0016\u0007\u0000"+
-		"\u0004\u0001\u0000\u0000\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004"+
-		"\u0005\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006"+
-		"\u0001\u0001\u0000\u0000\u0000\u0007\b\u0007\u0000\u0000\u0000\b\u0003"+
-		"\u0001\u0000\u0000\u0000\u0000";
+		"\u0000\u0002\u0000\u0002\u0000\u0001\u0001\u0000\t\n\u0007\u0000\u0004"+
+		"\u0001\u0000\u0000\u0000\u0002\u0007\u0001\u0000\u0000\u0000\u0004\u0005"+
+		"\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001"+
+		"\u0001\u0000\u0000\u0000\u0007\b\u0007\u0000\u0000\u0000\b\u0003\u0001"+
+		"\u0000\u0000\u0000\u0000";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

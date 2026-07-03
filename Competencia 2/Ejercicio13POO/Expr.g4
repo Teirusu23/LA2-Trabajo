@@ -2,29 +2,36 @@ grammar Expr;
 
 root: expr EOF ;    
 
-expr: NUM | IDENTIFICADOR ;
+expr: NUM | Identificador ;
 
-PUBLIC: 'public';
-CLASS: 'class';
-LlaveA: '{';
-STATIC: 'static';
-VOID: 'void';
+CREATE: 'CREATE';
+TABLE: 'TABLE';
+PRIMARY: 'primary';
+NOT: 'NOT';
+NULL: 'NULL';
+INSERT: 'INSERT';
+INTO: 'INTO';
+SELECT: 'SELECT';
+FROM: 'FROM';
+INNER: 'INNER';
+JOIN: 'JOIN';
+ON: 'ON';
+WHERE: 'WHERE';
+
 ParentA: '(';
-STRING: 'String';
-CorchA: '[';
-CorchC: ']';
 ParentC: ')';
-INT: 'int';
+Coma: ',';
+PuntoComa: ';';
 Igual: '=';
-PuntoComa: ';' ;
-IF: 'if';
-CompIg: '>=';
-LlaveC: '}';
 Punto: '.';
-Suma: '+';
 
-CADENA : '"' ~["\r\n]* '"' ;
-NUM: [0-9]+ ;
-IDENTIFICADOR: [_a-zA-Z][a-zA-Z0-9_]* ;
+Cadena: '\'' ~['\r\n]* '\'';
+
+
+NUM: [0-9]+;
+
+Identificador: [a-zA-Z_][a-zA-Z_0-9$]*;
+
+
 
 WS: [ \t\r\n]+ -> skip ;

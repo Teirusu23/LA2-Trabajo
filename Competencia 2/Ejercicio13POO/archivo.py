@@ -28,7 +28,7 @@ class Archivo:
     def es_el_tipo_correcto(self):
 
         # Comparamos si la extension es igual a .txt
-        return self.extension() == ".java"
+        return self.extension() == ".sql"
 
     # Metodo para leer el contenido del archivo
     def leer(self):
