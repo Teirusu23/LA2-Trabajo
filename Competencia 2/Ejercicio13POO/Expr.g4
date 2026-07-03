@@ -24,7 +24,7 @@ Coma: ',';
 PuntoComa: ';';
 Igual: '=';
 Punto: '.';
-
+ 
 Cadena: '\'' ~['\r\n]* '\'';
 
 
