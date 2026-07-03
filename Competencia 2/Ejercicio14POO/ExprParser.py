@@ -10,8 +10,8 @@ else:
 
 def serializedATN():
     return [
-        4,1,22,10,2,0,7,0,2,1,7,1,1,0,1,0,1,0,1,1,1,1,1,1,0,0,2,0,2,0,1,
-        1,0,20,21,7,0,4,1,0,0,0,2,7,1,0,0,0,4,5,3,2,1,0,5,6,5,0,0,1,6,1,
+        4,1,23,10,2,0,7,0,2,1,7,1,1,0,1,0,1,0,1,1,1,1,1,1,0,0,2,0,2,0,1,
+        1,0,21,22,7,0,4,1,0,0,0,2,7,1,0,0,0,4,5,3,2,1,0,5,6,5,0,0,1,6,1,
         1,0,0,0,7,8,7,0,0,0,8,3,1,0,0,0,0
     ]
 
@@ -25,14 +25,15 @@ class ExprParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'public'", "'class'", "'{'", "'static'", 
-                     "'void'", "'('", "'String'", "'['", "']'", "')'", "'int'", 
-                     "'='", "';'", "'if'", "'>='", "'}'", "'.'", "'+'" ]
+    literalNames = [ "<INVALID>", "'CREATE'", "'TABLE'", "'primary'", "'NOT'", 
+                     "'NULL'", "'INSERT'", "'INTO'", "'SELECT'", "'FROM'", 
+                     "'INNER'", "'JOIN'", "'ON'", "'WHERE'", "'('", "')'", 
+                     "','", "';'", "'='", "'.'" ]
 
-    symbolicNames = [ "<INVALID>", "PUBLIC", "CLASS", "LlaveA", "STATIC", 
-                      "VOID", "ParentA", "STRING", "CorchA", "CorchC", "ParentC", 
-                      "INT", "Igual", "PuntoComa", "IF", "CompIg", "LlaveC", 
-                      "Punto", "Suma", "CADENA", "NUM", "IDENTIFICADOR", 
+    symbolicNames = [ "<INVALID>", "CREATE", "TABLE", "PRIMARY", "NOT", 
+                      "NULL", "INSERT", "INTO", "SELECT", "FROM", "INNER", 
+                      "JOIN", "ON", "WHERE", "ParentA", "ParentC", "Coma", 
+                      "PuntoComa", "Igual", "Punto", "Cadena", "NUM", "Identificador", 
                       "WS" ]
 
     RULE_root = 0
@@ -41,28 +42,29 @@ class ExprParser ( Parser ):
     ruleNames =  [ "root", "expr" ]
 
     EOF = Token.EOF
-    PUBLIC=1
-    CLASS=2
-    LlaveA=3
-    STATIC=4
-    VOID=5
-    ParentA=6
-    STRING=7
-    CorchA=8
-    CorchC=9
-    ParentC=10
-    INT=11
-    Igual=12
-    PuntoComa=13
-    IF=14
-    CompIg=15
-    LlaveC=16
-    Punto=17
-    Suma=18
-    CADENA=19
-    NUM=20
-    IDENTIFICADOR=21
-    WS=22
+    CREATE=1
+    TABLE=2
+    PRIMARY=3
+    NOT=4
+    NULL=5
+    INSERT=6
+    INTO=7
+    SELECT=8
+    FROM=9
+    INNER=10
+    JOIN=11
+    ON=12
+    WHERE=13
+    ParentA=14
+    ParentC=15
+    Coma=16
+    PuntoComa=17
+    Igual=18
+    Punto=19
+    Cadena=20
+    NUM=21
+    Identificador=22
+    WS=23
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -122,8 +124,8 @@ class ExprParser ( Parser ):
         def NUM(self):
             return self.getToken(ExprParser.NUM, 0)
 
-        def IDENTIFICADOR(self):
-            return self.getToken(ExprParser.IDENTIFICADOR, 0)
+        def Identificador(self):
+            return self.getToken(ExprParser.Identificador, 0)
 
         def getRuleIndex(self):
             return ExprParser.RULE_expr
@@ -140,7 +142,7 @@ class ExprParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 7
             _la = self._input.LA(1)
-            if not(_la==20 or _la==21):
+            if not(_la==21 or _la==22):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
