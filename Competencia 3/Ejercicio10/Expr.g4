@@ -2,7 +2,7 @@ grammar Expr;
 
 root : expr EOF;
 
-expr:  PRINT ParentA expr ParentC
+expr:  PRINT ParentA expr ParentC PuntoComa
        | Identificador | String;
 
 PRINT: 'print';

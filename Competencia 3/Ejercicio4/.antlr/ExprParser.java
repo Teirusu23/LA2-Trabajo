@@ -126,9 +126,12 @@ public class ExprParser extends Parser {
 	@SuppressWarnings("CheckReturnValue")
 	public static class ExprContext extends ParserRuleContext {
 		public TerminalNode IF() { return getToken(ExprParser.IF, 0); }
+		public List<TerminalNode> Identificador() { return getTokens(ExprParser.Identificador); }
+		public TerminalNode Identificador(int i) {
+			return getToken(ExprParser.Identificador, i);
+		}
 		public TerminalNode Comp() { return getToken(ExprParser.Comp, 0); }
 		public TerminalNode NUM() { return getToken(ExprParser.NUM, 0); }
-		public TerminalNode Identificador() { return getToken(ExprParser.Identificador, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -139,7 +142,7 @@ public class ExprParser extends Parser {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_expr);
 		try {
-			setState(14);
+			setState(20);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 			case 1:
@@ -148,26 +151,43 @@ public class ExprParser extends Parser {
 				setState(7);
 				match(IF);
 				setState(8);
-				match(Comp);
+				match(Identificador);
 				setState(9);
+				match(Comp);
+				setState(10);
 				match(NUM);
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(10);
-				match(IF);
 				setState(11);
-				match(Comp);
+				match(IF);
 				setState(12);
+				match(NUM);
+				setState(13);
+				match(Comp);
+				setState(14);
 				match(Identificador);
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(13);
+				setState(15);
+				match(IF);
+				setState(16);
+				match(Identificador);
+				setState(17);
+				match(Comp);
+				setState(18);
+				match(Identificador);
+				}
+				break;
+			case 4:
+				enterOuterAlt(_localctx, 4);
+				{
+				setState(19);
 				match(NUM);
 				}
 				break;
@@ -185,18 +205,22 @@ public class ExprParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0005\u0011\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0004\u0001\u0005\u0017\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
 		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u000f\b\u0001"+
-		"\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0010\u0000\u0004"+
-		"\u0001\u0000\u0000\u0000\u0002\u000e\u0001\u0000\u0000\u0000\u0004\u0005"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u0015\b\u0001"+
+		"\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0017\u0000\u0004"+
+		"\u0001\u0000\u0000\u0000\u0002\u0014\u0001\u0000\u0000\u0000\u0004\u0005"+
 		"\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001"+
-		"\u0001\u0000\u0000\u0000\u0007\b\u0005\u0001\u0000\u0000\b\t\u0005\u0002"+
-		"\u0000\u0000\t\u000f\u0005\u0003\u0000\u0000\n\u000b\u0005\u0001\u0000"+
-		"\u0000\u000b\f\u0005\u0002\u0000\u0000\f\u000f\u0005\u0004\u0000\u0000"+
-		"\r\u000f\u0005\u0003\u0000\u0000\u000e\u0007\u0001\u0000\u0000\u0000\u000e"+
-		"\n\u0001\u0000\u0000\u0000\u000e\r\u0001\u0000\u0000\u0000\u000f\u0003"+
-		"\u0001\u0000\u0000\u0000\u0001\u000e";
+		"\u0001\u0000\u0000\u0000\u0007\b\u0005\u0001\u0000\u0000\b\t\u0005\u0004"+
+		"\u0000\u0000\t\n\u0005\u0002\u0000\u0000\n\u0015\u0005\u0003\u0000\u0000"+
+		"\u000b\f\u0005\u0001\u0000\u0000\f\r\u0005\u0003\u0000\u0000\r\u000e\u0005"+
+		"\u0002\u0000\u0000\u000e\u0015\u0005\u0004\u0000\u0000\u000f\u0010\u0005"+
+		"\u0001\u0000\u0000\u0010\u0011\u0005\u0004\u0000\u0000\u0011\u0012\u0005"+
+		"\u0002\u0000\u0000\u0012\u0015\u0005\u0004\u0000\u0000\u0013\u0015\u0005"+
+		"\u0003\u0000\u0000\u0014\u0007\u0001\u0000\u0000\u0000\u0014\u000b\u0001"+
+		"\u0000\u0000\u0000\u0014\u000f\u0001\u0000\u0000\u0000\u0014\u0013\u0001"+
+		"\u0000\u0000\u0000\u0015\u0003\u0001\u0000\u0000\u0000\u0001\u0014";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

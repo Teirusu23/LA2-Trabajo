@@ -16,7 +16,7 @@ def serializedATN():
         97,122,3,0,9,10,13,13,32,32,30,0,1,1,0,0,0,0,3,1,0,0,0,0,5,1,0,0,
         0,0,7,1,0,0,0,1,10,1,0,0,0,3,14,1,0,0,0,5,17,1,0,0,0,7,22,1,0,0,
         0,9,11,7,0,0,0,10,9,1,0,0,0,11,12,1,0,0,0,12,10,1,0,0,0,12,13,1,
-        0,0,0,13,2,1,0,0,0,14,15,5,43,0,0,15,4,1,0,0,0,16,18,7,1,0,0,17,
+        0,0,0,13,2,1,0,0,0,14,15,5,45,0,0,15,4,1,0,0,0,16,18,7,1,0,0,17,
         16,1,0,0,0,18,19,1,0,0,0,19,17,1,0,0,0,19,20,1,0,0,0,20,6,1,0,0,
         0,21,23,7,2,0,0,22,21,1,0,0,0,23,24,1,0,0,0,24,22,1,0,0,0,24,25,
         1,0,0,0,25,26,1,0,0,0,26,27,6,3,0,0,27,8,1,0,0,0,4,0,12,19,24,1,
@@ -30,7 +30,7 @@ class ExprLexer(Lexer):
     decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
 
     NUM = 1
-    MAS = 2
+    MENOS = 2
     IDENTIFICADOR = 3
     WS = 4
 
@@ -39,12 +39,12 @@ class ExprLexer(Lexer):
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "'+'" ]
+            "'-'" ]
 
     symbolicNames = [ "<INVALID>",
-            "NUM", "MAS", "IDENTIFICADOR", "WS" ]
+            "NUM", "MENOS", "IDENTIFICADOR", "WS" ]
 
-    ruleNames = [ "NUM", "MAS", "IDENTIFICADOR", "WS" ]
+    ruleNames = [ "NUM", "MENOS", "IDENTIFICADOR", "WS" ]
 
     grammarFileName = "Expr.g4"
 

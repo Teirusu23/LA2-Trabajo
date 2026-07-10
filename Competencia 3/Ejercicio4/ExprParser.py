@@ -10,11 +10,13 @@ else:
 
 def serializedATN():
     return [
-        4,1,5,17,2,0,7,0,2,1,7,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-        3,1,15,8,1,1,1,0,0,2,0,2,0,0,16,0,4,1,0,0,0,2,14,1,0,0,0,4,5,3,2,
-        1,0,5,6,5,0,0,1,6,1,1,0,0,0,7,8,5,1,0,0,8,9,5,2,0,0,9,15,5,3,0,0,
-        10,11,5,1,0,0,11,12,5,2,0,0,12,15,5,4,0,0,13,15,5,3,0,0,14,7,1,0,
-        0,0,14,10,1,0,0,0,14,13,1,0,0,0,15,3,1,0,0,0,1,14
+        4,1,5,23,2,0,7,0,2,1,7,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        1,1,1,1,1,1,1,1,1,1,1,1,3,1,21,8,1,1,1,0,0,2,0,2,0,0,23,0,4,1,0,
+        0,0,2,20,1,0,0,0,4,5,3,2,1,0,5,6,5,0,0,1,6,1,1,0,0,0,7,8,5,1,0,0,
+        8,9,5,4,0,0,9,10,5,2,0,0,10,21,5,3,0,0,11,12,5,1,0,0,12,13,5,3,0,
+        0,13,14,5,2,0,0,14,21,5,4,0,0,15,16,5,1,0,0,16,17,5,4,0,0,17,18,
+        5,2,0,0,18,21,5,4,0,0,19,21,5,3,0,0,20,7,1,0,0,0,20,11,1,0,0,0,20,
+        15,1,0,0,0,20,19,1,0,0,0,21,3,1,0,0,0,1,20
     ]
 
 class ExprParser ( Parser ):
@@ -102,14 +104,17 @@ class ExprParser ( Parser ):
         def IF(self):
             return self.getToken(ExprParser.IF, 0)
 
+        def Identificador(self, i:int=None):
+            if i is None:
+                return self.getTokens(ExprParser.Identificador)
+            else:
+                return self.getToken(ExprParser.Identificador, i)
+
         def Comp(self):
             return self.getToken(ExprParser.Comp, 0)
 
         def NUM(self):
             return self.getToken(ExprParser.NUM, 0)
-
-        def Identificador(self):
-            return self.getToken(ExprParser.Identificador, 0)
 
         def getRuleIndex(self):
             return ExprParser.RULE_expr
@@ -122,7 +127,7 @@ class ExprParser ( Parser ):
         localctx = ExprParser.ExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_expr)
         try:
-            self.state = 14
+            self.state = 20
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,0,self._ctx)
             if la_ == 1:
@@ -130,24 +135,40 @@ class ExprParser ( Parser ):
                 self.state = 7
                 self.match(ExprParser.IF)
                 self.state = 8
-                self.match(ExprParser.Comp)
+                self.match(ExprParser.Identificador)
                 self.state = 9
+                self.match(ExprParser.Comp)
+                self.state = 10
                 self.match(ExprParser.NUM)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 10
-                self.match(ExprParser.IF)
                 self.state = 11
-                self.match(ExprParser.Comp)
+                self.match(ExprParser.IF)
                 self.state = 12
+                self.match(ExprParser.NUM)
+                self.state = 13
+                self.match(ExprParser.Comp)
+                self.state = 14
                 self.match(ExprParser.Identificador)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 13
+                self.state = 15
+                self.match(ExprParser.IF)
+                self.state = 16
+                self.match(ExprParser.Identificador)
+                self.state = 17
+                self.match(ExprParser.Comp)
+                self.state = 18
+                self.match(ExprParser.Identificador)
+                pass
+
+            elif la_ == 4:
+                self.enterOuterAlt(localctx, 4)
+                self.state = 19
                 self.match(ExprParser.NUM)
                 pass
 

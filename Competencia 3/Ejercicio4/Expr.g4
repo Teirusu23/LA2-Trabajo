@@ -2,7 +2,10 @@ grammar Expr;
 
 root : expr EOF;
 
-expr: IF Comp NUM | IF Comp Identificador | NUM;
+expr: IF Identificador Comp NUM 
+      | IF NUM Comp Identificador 
+      | IF Identificador Comp Identificador
+      | NUM;
 
 IF: 'if';
 Comp: '>';

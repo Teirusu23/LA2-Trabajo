@@ -133,6 +133,7 @@ public class ExprParser extends Parser {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public TerminalNode ParentC() { return getToken(ExprParser.ParentC, 0); }
+		public TerminalNode PuntoComa() { return getToken(ExprParser.PuntoComa, 0); }
 		public TerminalNode Identificador() { return getToken(ExprParser.Identificador, 0); }
 		public TerminalNode String() { return getToken(ExprParser.String, 0); }
 		public ExprContext(ParserRuleContext parent, int invokingState) {
@@ -145,7 +146,7 @@ public class ExprParser extends Parser {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_expr);
 		try {
-			setState(14);
+			setState(15);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PRINT:
@@ -159,19 +160,21 @@ public class ExprParser extends Parser {
 				expr();
 				setState(10);
 				match(ParentC);
+				setState(11);
+				match(PuntoComa);
 				}
 				break;
 			case Identificador:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(12);
+				setState(13);
 				match(Identificador);
 				}
 				break;
 			case String:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(13);
+				setState(14);
 				match(String);
 				}
 				break;
@@ -191,18 +194,19 @@ public class ExprParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0007\u0011\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
+		"\u0004\u0001\u0007\u0012\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001"+
 		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
-		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001\u000f\b\u0001"+
-		"\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0010\u0000\u0004"+
-		"\u0001\u0000\u0000\u0000\u0002\u000e\u0001\u0000\u0000\u0000\u0004\u0005"+
-		"\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001\u0006\u0001"+
-		"\u0001\u0000\u0000\u0000\u0007\b\u0005\u0001\u0000\u0000\b\t\u0005\u0002"+
-		"\u0000\u0000\t\n\u0003\u0002\u0001\u0000\n\u000b\u0005\u0003\u0000\u0000"+
-		"\u000b\u000f\u0001\u0000\u0000\u0000\f\u000f\u0005\u0006\u0000\u0000\r"+
-		"\u000f\u0005\u0005\u0000\u0000\u000e\u0007\u0001\u0000\u0000\u0000\u000e"+
-		"\f\u0001\u0000\u0000\u0000\u000e\r\u0001\u0000\u0000\u0000\u000f\u0003"+
-		"\u0001\u0000\u0000\u0000\u0001\u000e";
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0003\u0001"+
+		"\u0010\b\u0001\u0001\u0001\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0011"+
+		"\u0000\u0004\u0001\u0000\u0000\u0000\u0002\u000f\u0001\u0000\u0000\u0000"+
+		"\u0004\u0005\u0003\u0002\u0001\u0000\u0005\u0006\u0005\u0000\u0000\u0001"+
+		"\u0006\u0001\u0001\u0000\u0000\u0000\u0007\b\u0005\u0001\u0000\u0000\b"+
+		"\t\u0005\u0002\u0000\u0000\t\n\u0003\u0002\u0001\u0000\n\u000b\u0005\u0003"+
+		"\u0000\u0000\u000b\f\u0005\u0004\u0000\u0000\f\u0010\u0001\u0000\u0000"+
+		"\u0000\r\u0010\u0005\u0006\u0000\u0000\u000e\u0010\u0005\u0005\u0000\u0000"+
+		"\u000f\u0007\u0001\u0000\u0000\u0000\u000f\r\u0001\u0000\u0000\u0000\u000f"+
+		"\u000e\u0001\u0000\u0000\u0000\u0010\u0003\u0001\u0000\u0000\u0000\u0001"+
+		"\u000f";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -10,11 +10,12 @@ else:
 
 def serializedATN():
     return [
-        4,1,7,17,2,0,7,0,2,1,7,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-        3,1,15,8,1,1,1,0,0,2,0,2,0,0,16,0,4,1,0,0,0,2,14,1,0,0,0,4,5,3,2,
-        1,0,5,6,5,0,0,1,6,1,1,0,0,0,7,8,5,1,0,0,8,9,5,2,0,0,9,10,3,2,1,0,
-        10,11,5,3,0,0,11,15,1,0,0,0,12,15,5,6,0,0,13,15,5,5,0,0,14,7,1,0,
-        0,0,14,12,1,0,0,0,14,13,1,0,0,0,15,3,1,0,0,0,1,14
+        4,1,7,18,2,0,7,0,2,1,7,1,1,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+        1,1,3,1,16,8,1,1,1,0,0,2,0,2,0,0,17,0,4,1,0,0,0,2,15,1,0,0,0,4,5,
+        3,2,1,0,5,6,5,0,0,1,6,1,1,0,0,0,7,8,5,1,0,0,8,9,5,2,0,0,9,10,3,2,
+        1,0,10,11,5,3,0,0,11,12,5,4,0,0,12,16,1,0,0,0,13,16,5,6,0,0,14,16,
+        5,5,0,0,15,7,1,0,0,0,15,13,1,0,0,0,15,14,1,0,0,0,16,3,1,0,0,0,1,
+        15
     ]
 
 class ExprParser ( Parser ):
@@ -114,6 +115,9 @@ class ExprParser ( Parser ):
         def ParentC(self):
             return self.getToken(ExprParser.ParentC, 0)
 
+        def PuntoComa(self):
+            return self.getToken(ExprParser.PuntoComa, 0)
+
         def Identificador(self):
             return self.getToken(ExprParser.Identificador, 0)
 
@@ -131,7 +135,7 @@ class ExprParser ( Parser ):
         localctx = ExprParser.ExprContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_expr)
         try:
-            self.state = 14
+            self.state = 15
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1]:
@@ -144,15 +148,17 @@ class ExprParser ( Parser ):
                 self.expr()
                 self.state = 10
                 self.match(ExprParser.ParentC)
+                self.state = 11
+                self.match(ExprParser.PuntoComa)
                 pass
             elif token in [6]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 12
+                self.state = 13
                 self.match(ExprParser.Identificador)
                 pass
             elif token in [5]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 13
+                self.state = 14
                 self.match(ExprParser.String)
                 pass
             else:

@@ -26,9 +26,9 @@ class ExprParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "<INVALID>", "'+'" ]
+    literalNames = [ "<INVALID>", "<INVALID>", "'-'" ]
 
-    symbolicNames = [ "<INVALID>", "NUM", "MAS", "IDENTIFICADOR", "WS" ]
+    symbolicNames = [ "<INVALID>", "NUM", "MENOS", "IDENTIFICADOR", "WS" ]
 
     RULE_root = 0
     RULE_expr = 1
@@ -37,7 +37,7 @@ class ExprParser ( Parser ):
 
     EOF = Token.EOF
     NUM=1
-    MAS=2
+    MENOS=2
     IDENTIFICADOR=3
     WS=4
 
@@ -102,8 +102,8 @@ class ExprParser ( Parser ):
             else:
                 return self.getToken(ExprParser.NUM, i)
 
-        def MAS(self):
-            return self.getToken(ExprParser.MAS, 0)
+        def MENOS(self):
+            return self.getToken(ExprParser.MENOS, 0)
 
         def getRuleIndex(self):
             return ExprParser.RULE_expr
@@ -124,7 +124,7 @@ class ExprParser ( Parser ):
                 self.state = 7
                 self.match(ExprParser.NUM)
                 self.state = 8
-                self.match(ExprParser.MAS)
+                self.match(ExprParser.MENOS)
                 self.state = 9
                 self.match(ExprParser.NUM)
                 pass

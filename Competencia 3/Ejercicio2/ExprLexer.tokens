@@ -1,5 +1,5 @@
 NUM=1
-MAS=2
+MENOS=2
 IDENTIFICADOR=3
 WS=4
-'+'=2
+'-'=2
