@@ -4,7 +4,7 @@ options {
     caseInsensitive=true;
 }
 
-root: expr+ EOF ;
+root: setencia+ EOF ;
 
 palabras_no_reservadas
     : BY
@@ -52,6 +52,7 @@ palabras_no_reservadas
     | COMMIT
     | BEGIN
     | ROLLBACK
+    | ALTER
     ;
 
 tipo_dato: INT 
@@ -69,7 +70,53 @@ tipo_dato: INT
 
 identi: IDF | palabras_no_reservadas;
 
-expr: NUM ;
+setencia: select PUNTOCOMA | expr PUNTOCOMA;
+
+select: SELECT lista_columnas 
+        (FROM lista_tablas)? 
+        (WHERE expr)? 
+        (GROUP BY lista_expresiones)? 
+        (HAVING expr)?
+        (ORDER BY lista_ordenamiento)? 
+        (LIMIT NUM)?;
+
+lista_expresiones: expr (COMA expr)*;
+
+ordenamiento: expr (ASC | DESC)?;
+lista_ordenamiento: ordenamiento (COMA ordenamiento)*;
+
+lista_columnas: MULTIPLICACION | expr (COMA expr)*;
+
+lista_tablas: identi (identi)? (COMA identi (identi)?)*;
+
+referencia_columna: identi 
+                  | identi PUNTO identi
+                  | identi PUNTO identi PUNTO identi;
+
+funciones_agg: SUM PARENTA expr PARENTC
+          | AVG PARENTA expr PARENTC
+          | COUNT PARENTA (MULTIPLICACION | expr) PARENTC
+          | MIN PARENTA expr PARENTC
+          | MAX PARENTA expr PARENTC
+          | RANK PARENTA expr PARENTC
+          | RANDOM PARENTA PARENTC
+          | MD5 PARENTA expr PARENTC;
+
+expr: PARENTA expr PARENTC
+    | NOT expr
+    | expr (MULTIPLICACION | DIVISION) expr
+    | expr SUMA expr
+    | expr RESTA expr
+    | expr (IGUAL | COMP1 | COMP2 | COMPIG1 | COMPIG2 | LIKE | ILIKE) expr
+    | expr AND expr
+    | expr OR expr
+    | funciones_agg
+    | referencia_columna
+    | NUM
+    | CADENA
+    | TRUE | FALSE | NULL
+    ;
+
 
 SELECT: 'SELECT';
 FROM: 'FROM';
@@ -155,6 +202,7 @@ VARYING: 'VARYING';
 COMMIT: 'COMMIT';
 BEGIN: 'BEGIN';
 ROLLBACK: 'ROLLBACK';
+ALTER: 'ALTER';
 
 SUMA: '+' ;
 RESTA: '-' ;
@@ -162,6 +210,7 @@ MULTIPLICACION: '*' ;
 DIVISION: '/' ;
 IGUAL: '=' ;
 COMA: ',' ;
+PUNTO: '.' ;
 PARENTA: '(';
 PARENTC: ')';
 PUNTOCOMA: ';' ;
