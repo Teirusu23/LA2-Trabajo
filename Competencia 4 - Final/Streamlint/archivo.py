@@ -23,8 +23,8 @@ class Archivo:
     # Metodo para validar si el archivo es .txt
     def es_txt(self):
 
-        # Retornamos True si la extension es .txt
-        return self.obtener_extension() == ".txt"
+        # Retornamos True si la extension es .sql
+        return self.obtener_extension() == ".sql"
 
     # Metodo para leer el contenido del archivo
     def leer(self):
