@@ -256,7 +256,7 @@ deactivate
 Para generar los archivos de Python a partir de la gramática `Expr.g4`, ejecuta el siguiente comando en PowerShell:
 
 ```powershell
-java -jar $env:CLASSPATH -Dlanguage=Python3 -no-listener .\Expr.g4
+java -jar $env:CLASSPATH -Dlanguage=Python3 .\Expr.g4
 ```
 
 Este comando genera los archivos necesarios para usar la gramática en Python, por ejemplo:
