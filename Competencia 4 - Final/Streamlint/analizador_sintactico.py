@@ -61,7 +61,7 @@ class AnalizadorSintactico:
 
         # Ejecutamos la regla inicial de la gramatica para generar el arbol
         # IMPORTANTE: Cambia "programa" por el nombre de tu regla inicial del archivo .g4
-        self.arbol = self.parser.setencia()
+        self.arbol = self.parser.root()
 
     # Metodo para obtener errores sintacticos
     def obtener_errores(self):
