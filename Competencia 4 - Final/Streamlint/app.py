@@ -1,9 +1,13 @@
+from antlr4 import ParseTreeWalker
+
 import streamlit as st
 from archivo import Archivo
 from analizador_lexico import AnalizadorLexico
 
 # Importamos el nuevo analizador sintactico
 from analizador_sintactico import AnalizadorSintactico
+
+from analizador_semantico import AnalizadorSemantico
 
 
 class App:
@@ -51,6 +55,14 @@ class App:
         errores_sint = self.analizador_sintactico.obtener_errores()
         arbol_texto = self.analizador_sintactico.obtener_arbol_texto()
 
+        # 3. Análisis Semántico
+        walker = ParseTreeWalker()
+        semantico = AnalizadorSemantico()
+        # Hacemos que el walker recorra el árbol sintáctico usando nuestro Listener
+        walker.walk(semantico, self.analizador_sintactico.arbol)
+
+        errores_sem = semantico.errores_semanticos
+
         # Mostramos resultados lexicos
         st.subheader("Tokens")
         if len(tokens) == 0:
@@ -74,6 +86,14 @@ class App:
         st.subheader("Arbol de Derivacion")
         if arbol_texto:
             st.code(arbol_texto, language="lisp")
+
+        # Mostramos resultados semanticos
+        st.subheader("Errores Semánticos")
+        if len(errores_sem) == 0:
+            st.success("No hay errores lógicos/semánticos")
+        else:
+            st.dataframe(errores_sem, use_container_width=True)
+
 
 
 if __name__ == "__main__":

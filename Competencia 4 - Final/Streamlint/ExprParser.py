@@ -880,6 +880,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_root
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRoot" ):
+                listener.enterRoot(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRoot" ):
+                listener.exitRoot(self)
+
 
 
 
@@ -1187,6 +1195,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_palabras_no_reservadas
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPalabras_no_reservadas" ):
+                listener.enterPalabras_no_reservadas(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPalabras_no_reservadas" ):
+                listener.exitPalabras_no_reservadas(self)
+
 
 
 
@@ -1324,6 +1340,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_tipo_dato
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTipo_dato" ):
+                listener.enterTipo_dato(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTipo_dato" ):
+                listener.exitTipo_dato(self)
 
 
 
@@ -1594,6 +1618,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_identi
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterIdenti" ):
+                listener.enterIdenti(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitIdenti" ):
+                listener.exitIdenti(self)
+
 
 
 
@@ -1687,6 +1719,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_setencia
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterSetencia" ):
+                listener.enterSetencia(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitSetencia" ):
+                listener.exitSetencia(self)
 
 
 
@@ -1822,6 +1862,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_use
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUse" ):
+                listener.enterUse(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUse" ):
+                listener.exitUse(self)
+
 
 
 
@@ -1906,6 +1954,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_select
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterSelect" ):
+                listener.enterSelect(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitSelect" ):
+                listener.exitSelect(self)
 
 
 
@@ -2017,6 +2073,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_lista_expresiones
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_expresiones" ):
+                listener.enterLista_expresiones(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_expresiones" ):
+                listener.exitLista_expresiones(self)
+
 
 
 
@@ -2069,6 +2133,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_nombre_calificado
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterNombre_calificado" ):
+                listener.enterNombre_calificado(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitNombre_calificado" ):
+                listener.exitNombre_calificado(self)
 
 
 
@@ -2123,6 +2195,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_lista_nomb_cali
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_nomb_cali" ):
+                listener.enterLista_nomb_cali(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_nomb_cali" ):
+                listener.exitLista_nomb_cali(self)
 
 
 
@@ -2186,6 +2266,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_tabla_origen
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTabla_origen" ):
+                listener.enterTabla_origen(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTabla_origen" ):
+                listener.exitTabla_origen(self)
 
 
 
@@ -2299,6 +2387,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_join
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterJoin" ):
+                listener.enterJoin(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitJoin" ):
+                listener.exitJoin(self)
+
 
 
 
@@ -2398,6 +2494,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_tabla_ref
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTabla_ref" ):
+                listener.enterTabla_ref(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTabla_ref" ):
+                listener.exitTabla_ref(self)
+
 
 
 
@@ -2448,6 +2552,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_ordenamiento
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOrdenamiento" ):
+                listener.enterOrdenamiento(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOrdenamiento" ):
+                listener.exitOrdenamiento(self)
 
 
 
@@ -2506,6 +2618,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_lista_ordenamiento
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_ordenamiento" ):
+                listener.enterLista_ordenamiento(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_ordenamiento" ):
+                listener.exitLista_ordenamiento(self)
+
 
 
 
@@ -2561,6 +2681,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_lista_columnas
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_columnas" ):
+                listener.enterLista_columnas(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_columnas" ):
+                listener.exitLista_columnas(self)
 
 
 
@@ -2618,6 +2746,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_elemento_select
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterElemento_select" ):
+                listener.enterElemento_select(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitElemento_select" ):
+                listener.exitElemento_select(self)
 
 
 
@@ -2692,6 +2828,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_lista_tablas
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_tablas" ):
+                listener.enterLista_tablas(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_tablas" ):
+                listener.exitLista_tablas(self)
+
 
 
 
@@ -2747,6 +2891,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_referencia_columna
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterReferencia_columna" ):
+                listener.enterReferencia_columna(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitReferencia_columna" ):
+                listener.exitReferencia_columna(self)
 
 
 
@@ -2845,6 +2997,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_funciones_agg
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFunciones_agg" ):
+                listener.enterFunciones_agg(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFunciones_agg" ):
+                listener.exitFunciones_agg(self)
 
 
 
@@ -3013,6 +3173,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_create
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate" ):
+                listener.enterCreate(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate" ):
+                listener.exitCreate(self)
+
 
 
 
@@ -3108,6 +3276,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_create_schema
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_schema" ):
+                listener.enterCreate_schema(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_schema" ):
+                listener.exitCreate_schema(self)
+
 
 
 
@@ -3151,6 +3327,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_create_database
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_database" ):
+                listener.enterCreate_database(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_database" ):
+                listener.exitCreate_database(self)
 
 
 
@@ -3208,6 +3392,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_create_user
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_user" ):
+                listener.enterCreate_user(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_user" ):
+                listener.exitCreate_user(self)
 
 
 
@@ -3287,6 +3479,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_create_table
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_table" ):
+                listener.enterCreate_table(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_table" ):
+                listener.exitCreate_table(self)
+
 
 
 
@@ -3362,6 +3562,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_create_index
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_index" ):
+                listener.enterCreate_index(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_index" ):
+                listener.exitCreate_index(self)
 
 
 
@@ -3448,6 +3656,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_create_view
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_view" ):
+                listener.enterCreate_view(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_view" ):
+                listener.exitCreate_view(self)
 
 
 
@@ -3544,6 +3760,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_create_function
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_function" ):
+                listener.enterCreate_function(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_function" ):
+                listener.exitCreate_function(self)
 
 
 
@@ -3653,6 +3877,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_create_procedure
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_procedure" ):
+                listener.enterCreate_procedure(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_procedure" ):
+                listener.exitCreate_procedure(self)
 
 
 
@@ -3791,6 +4023,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_create_trigger
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCreate_trigger" ):
+                listener.enterCreate_trigger(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCreate_trigger" ):
+                listener.exitCreate_trigger(self)
+
 
 
 
@@ -3908,6 +4148,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_event_trigger
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterEvent_trigger" ):
+                listener.enterEvent_trigger(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitEvent_trigger" ):
+                listener.exitEvent_trigger(self)
 
 
 
@@ -4027,6 +4275,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_restriccion_col
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRestriccion_col" ):
+                listener.enterRestriccion_col(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRestriccion_col" ):
+                listener.exitRestriccion_col(self)
 
 
 
@@ -4227,6 +4483,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_accion_referencial
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAccion_referencial" ):
+                listener.enterAccion_referencial(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAccion_referencial" ):
+                listener.exitAccion_referencial(self)
+
 
 
 
@@ -4313,6 +4577,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_clausula_referencial
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterClausula_referencial" ):
+                listener.enterClausula_referencial(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitClausula_referencial" ):
+                listener.exitClausula_referencial(self)
+
 
 
 
@@ -4395,6 +4667,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_cuerpo_funcion
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCuerpo_funcion" ):
+                listener.enterCuerpo_funcion(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCuerpo_funcion" ):
+                listener.exitCuerpo_funcion(self)
+
 
 
 
@@ -4443,6 +4723,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_lista_identi
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_identi" ):
+                listener.enterLista_identi(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_identi" ):
+                listener.exitLista_identi(self)
 
 
 
@@ -4542,6 +4830,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_restricciones_tabla
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRestricciones_tabla" ):
+                listener.enterRestricciones_tabla(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRestricciones_tabla" ):
+                listener.exitRestricciones_tabla(self)
 
 
 
@@ -4693,6 +4989,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_elemento_tabla
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterElemento_tabla" ):
+                listener.enterElemento_tabla(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitElemento_tabla" ):
+                listener.exitElemento_tabla(self)
+
 
 
 
@@ -4748,6 +5052,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_lista_columnas_def
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_columnas_def" ):
+                listener.enterLista_columnas_def(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_columnas_def" ):
+                listener.exitLista_columnas_def(self)
 
 
 
@@ -4806,6 +5118,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_columna_def
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterColumna_def" ):
+                listener.enterColumna_def(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitColumna_def" ):
+                listener.exitColumna_def(self)
 
 
 
@@ -4866,6 +5186,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_delete
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDelete" ):
+                listener.enterDelete(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDelete" ):
+                listener.exitDelete(self)
 
 
 
@@ -4942,6 +5270,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_update
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterUpdate" ):
+                listener.enterUpdate(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitUpdate" ):
+                listener.exitUpdate(self)
+
 
 
 
@@ -5011,6 +5347,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_asignacion_upd
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAsignacion_upd" ):
+                listener.enterAsignacion_upd(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAsignacion_upd" ):
+                listener.exitAsignacion_upd(self)
 
 
 
@@ -5104,6 +5448,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_alter_accion
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_accion" ):
+                listener.enterAlter_accion(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_accion" ):
+                listener.exitAlter_accion(self)
 
 
 
@@ -5334,6 +5686,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_alter
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter" ):
+                listener.enterAlter(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter" ):
+                listener.exitAlter(self)
+
 
 
 
@@ -5440,6 +5800,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_alter_table
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_table" ):
+                listener.enterAlter_table(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_table" ):
+                listener.exitAlter_table(self)
+
 
 
 
@@ -5534,6 +5902,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_alter_schema
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_schema" ):
+                listener.enterAlter_schema(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_schema" ):
+                listener.exitAlter_schema(self)
+
 
 
 
@@ -5618,6 +5994,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_alter_database
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_database" ):
+                listener.enterAlter_database(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_database" ):
+                listener.exitAlter_database(self)
 
 
 
@@ -5711,6 +6095,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_opcion_usuario
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterOpcion_usuario" ):
+                listener.enterOpcion_usuario(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitOpcion_usuario" ):
+                listener.exitOpcion_usuario(self)
 
 
 
@@ -5824,6 +6216,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_alter_user
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_user" ):
+                listener.enterAlter_user(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_user" ):
+                listener.exitAlter_user(self)
+
 
 
 
@@ -5931,6 +6331,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_alter_index
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_index" ):
+                listener.enterAlter_index(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_index" ):
+                listener.exitAlter_index(self)
+
 
 
 
@@ -6006,6 +6414,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_alter_function
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_function" ):
+                listener.enterAlter_function(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_function" ):
+                listener.exitAlter_function(self)
 
 
 
@@ -6134,6 +6550,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_alter_view
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterAlter_view" ):
+                listener.enterAlter_view(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitAlter_view" ):
+                listener.exitAlter_view(self)
+
 
 
 
@@ -6245,6 +6669,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_drop
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop" ):
+                listener.enterDrop(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop" ):
+                listener.exitDrop(self)
+
 
 
 
@@ -6337,6 +6769,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_lista_tipos_dato
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_tipos_dato" ):
+                listener.enterLista_tipos_dato(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_tipos_dato" ):
+                listener.exitLista_tipos_dato(self)
+
 
 
 
@@ -6401,6 +6841,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_drop_table
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_table" ):
+                listener.enterDrop_table(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_table" ):
+                listener.exitDrop_table(self)
 
 
 
@@ -6482,6 +6930,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_drop_schema
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_schema" ):
+                listener.enterDrop_schema(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_schema" ):
+                listener.exitDrop_schema(self)
+
 
 
 
@@ -6556,6 +7012,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_drop_database
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_database" ):
+                listener.enterDrop_database(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_database" ):
+                listener.exitDrop_database(self)
+
 
 
 
@@ -6618,6 +7082,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_drop_user
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_user" ):
+                listener.enterDrop_user(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_user" ):
+                listener.exitDrop_user(self)
 
 
 
@@ -6690,6 +7162,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_drop_index
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_index" ):
+                listener.enterDrop_index(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_index" ):
+                listener.exitDrop_index(self)
 
 
 
@@ -6770,6 +7250,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_drop_view
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_view" ):
+                listener.enterDrop_view(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_view" ):
+                listener.exitDrop_view(self)
 
 
 
@@ -6863,6 +7351,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_drop_function
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_function" ):
+                listener.enterDrop_function(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_function" ):
+                listener.exitDrop_function(self)
 
 
 
@@ -6974,6 +7470,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_drop_trigger
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterDrop_trigger" ):
+                listener.enterDrop_trigger(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitDrop_trigger" ):
+                listener.exitDrop_trigger(self)
+
 
 
 
@@ -7046,6 +7550,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_valores_fila
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterValores_fila" ):
+                listener.enterValores_fila(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitValores_fila" ):
+                listener.exitValores_fila(self)
+
 
 
 
@@ -7115,6 +7627,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_insert
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterInsert" ):
+                listener.enterInsert(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitInsert" ):
+                listener.exitInsert(self)
 
 
 
@@ -7199,6 +7719,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_privilegios
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrivilegios" ):
+                listener.enterPrivilegios(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrivilegios" ):
+                listener.exitPrivilegios(self)
 
 
 
@@ -7285,6 +7813,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_lista_previ
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterLista_previ" ):
+                listener.enterLista_previ(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitLista_previ" ):
+                listener.exitLista_previ(self)
+
 
 
 
@@ -7351,6 +7887,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_grant
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterGrant" ):
+                listener.enterGrant(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitGrant" ):
+                listener.exitGrant(self)
 
 
 
@@ -7425,6 +7969,14 @@ class ExprParser ( Parser ):
         def getRuleIndex(self):
             return ExprParser.RULE_revoke
 
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRevoke" ):
+                listener.enterRevoke(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRevoke" ):
+                listener.exitRevoke(self)
+
 
 
 
@@ -7485,6 +8037,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_transaccion
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterTransaccion" ):
+                listener.enterTransaccion(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitTransaccion" ):
+                listener.exitTransaccion(self)
 
 
 
@@ -7571,6 +8131,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_para_funcion
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPara_funcion" ):
+                listener.enterPara_funcion(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPara_funcion" ):
+                listener.exitPara_funcion(self)
 
 
 
@@ -7726,6 +8294,14 @@ class ExprParser ( Parser ):
 
         def getRuleIndex(self):
             return ExprParser.RULE_expr
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterExpr" ):
+                listener.enterExpr(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitExpr" ):
+                listener.exitExpr(self)
 
 
 
